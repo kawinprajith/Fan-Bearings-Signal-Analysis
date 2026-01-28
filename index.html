@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SP10 Vibration Analyzer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body { font-family: Arial; padding: 15px; }
+    button { padding: 10px; margin: 5px 0; }
+    canvas { max-width: 100%; margin-top: 15px; }
+  </style>
+</head>
+
+<body>
+
+<h2>SP10 – Vibration Analyzer & Machinery Health Monitor</h2>
+
+<hr>
+
+<h3>1️⃣ Dataset / CSV Analysis (High-rate data)</h3>
+<input type="file" id="csvFile" accept=".csv">
+
+<p>RMS: <span id="csvRMS">--</span> m/s²</p>
+<p>Status: <span id="csvStatus">--</span></p>
+
+<canvas id="timeChart"></canvas>
+<canvas id="fftChart"></canvas>
+
+<h3>Envelope Spectrum</h3>
+<canvas id="envFFTChart"></canvas>
+
+<hr>
+
+<h3>2️⃣ Live Mobile Accelerometer (Low-frequency)</h3>
+<button onclick="startMeasurement()">Start Measurement (5 s)</button>
+
+<p>Live RMS: <span id="liveRMS">--</span> m/s²</p>
+<p>Status: <span id="liveStatus">--</span></p>
+
+<canvas id="liveTimeChart"></canvas>
+
+<script src="app.js"></script>
+</body>
+</html>
